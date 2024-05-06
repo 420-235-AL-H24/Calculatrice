@@ -4,7 +4,7 @@ import java.awt.*;
 public class Calculatrice {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Calculatrice");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Permet d'arrêter le programme lorsqu'on ferme la fenêtre.
         frame.setSize(500, 600);
         frame.setLocation(3200, 100);
 
@@ -15,8 +15,12 @@ public class Calculatrice {
         Font textFont = resultField.getFont();
         resultField.setFont(textFont.deriveFont(40.0f));
 
-        JButton buttonBackspace = new JButton("Backspace");
-        frame.add(buttonBackspace);
+        JPanel panneauPrincipal = new JPanel(new BorderLayout());
+        frame.add(panneauPrincipal, BorderLayout.CENTER);
+
+        panneauPrincipal.add(creerPanneauEdit(), BorderLayout.NORTH);
+        panneauPrincipal.add(creerPanneauMemoire(), BorderLayout.WEST);
+        panneauPrincipal.add(creerPanneauNumeors(), BorderLayout.CENTER);
 
         frame.setVisible(true);
     }
@@ -52,5 +56,47 @@ public class Calculatrice {
         menuBar.add(menuHelp);
 
         return menuBar;
+    }
+
+    public static JPanel creerPanneauEdit() {
+        JPanel panneauEdit = new JPanel(new FlowLayout());
+
+        JButton buttonBackspace = creerBouton("Backspace");
+        panneauEdit.add(buttonBackspace);
+
+        JButton buttonCE = creerBouton("CE");
+        panneauEdit.add(buttonCE);
+
+        JButton buttonC = creerBouton("C");
+        panneauEdit.add(buttonC);
+
+        return panneauEdit;
+    }
+
+    public static JPanel creerPanneauMemoire() {
+        JPanel panneauMemoire = new JPanel(new GridLayout(4, 1));
+        panneauMemoire.add(creerBouton("MC"));
+        panneauMemoire.add(creerBouton("MR"));
+        panneauMemoire.add(creerBouton("MS"));
+        panneauMemoire.add(creerBouton("M+"));
+        return panneauMemoire;
+    }
+
+    private static JPanel creerPanneauNumeors() {
+        JPanel panneauNumeros = new JPanel(new GridLayout(4, 5));
+        for (int i = 0; i < 10; i++)
+            panneauNumeros.add(creerBouton(String.valueOf(i)));
+        return panneauNumeros;
+    }
+    
+    public static JButton creerBouton(String texte) {
+        JButton bouton = new JButton(texte);
+        bouton.setMargin(new Insets(5, 5, 5, 5));
+        bouton.setBackground(Color.GREEN);
+        return bouton;
+    }
+
+    public static class MyButton extends JButton {
+
     }
 }
