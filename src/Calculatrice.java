@@ -4,6 +4,10 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class Calculatrice extends JFrame {
+    static JTextField resultField;
+
+    private double memory;
+
     public static void main(String[] args) {
         // Création de la fenêtre principale (la "racine graphique").
         JFrame frame = new Calculatrice();
@@ -61,7 +65,7 @@ public class Calculatrice extends JFrame {
     }
 
     private JTextField createResultField() {
-        JTextField resultField = new JTextField("0.0");
+        resultField = new JTextField("0.0");
         resultField.setFont(resultField.getFont().deriveFont(40.0f));
         resultField.setHorizontalAlignment(JTextField.RIGHT);
         return resultField;
