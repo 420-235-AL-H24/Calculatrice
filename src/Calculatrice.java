@@ -3,27 +3,31 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
-public class Calculatrice {
+public class Calculatrice extends JFrame {
     public static void main(String[] args) {
         // Création de la fenêtre principale (la "racine graphique").
-        JFrame frame = new JFrame("Calculatrice");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Indique à Swing d'arrêter le programme quand on ferme la fenêtre.
-        frame.setSize(500, 400); // Impose la taille initiale de la fenêtre (elle peut quand même être redimensionnée).
+        JFrame frame = new Calculatrice();
 
         if (args.length == 2) {
             // Place la fenêtre à un endroit spécifique de l'écran (utile pour les démonstrations en classe).
             frame.setLocation(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
         }
 
-        frame.setJMenuBar(createMenuBar()); // Ajout de la barre de menu (directement sous la barre de titre).
-        frame.add(createResultField(), BorderLayout.NORTH); // Ajout de la barre des résultats, en haut.
-        frame.add(createMemoryPanel(), BorderLayout.WEST); // Ajout du panneau de mémoire, à gauche.
-        frame.add(createMainPanel(), BorderLayout.CENTER); // Ajout du panneau principal, au centre.
-
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Indique à Swing d'arrêter le programme quand on ferme la fenêtre.
         frame.setVisible(true); // Étape finale pour afficher la fenêtre graphique une fois qu'elle est prête.
     }
 
-    private static JMenuBar createMenuBar() {
+    public Calculatrice() {
+        super("Calculatrice");
+        this.setSize(500, 400); // Impose la taille initiale de la fenêtre (elle peut quand même être redimensionnée).
+
+        this.setJMenuBar(createMenuBar()); // Ajout de la barre de menu (directement sous la barre de titre).
+        this.add(createResultField(), BorderLayout.NORTH); // Ajout de la barre des résultats, en haut.
+        this.add(createMemoryPanel(), BorderLayout.WEST); // Ajout du panneau de mémoire, à gauche.
+        this.add(createMainPanel(), BorderLayout.CENTER); // Ajout du panneau principal, au centre.
+    }
+
+    private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
 
         JMenu menuEdit = new JMenu("Edit");
@@ -56,14 +60,14 @@ public class Calculatrice {
         return menuBar;
     }
 
-    private static JTextField createResultField() {
+    private JTextField createResultField() {
         JTextField resultField = new JTextField("0.0");
         resultField.setFont(resultField.getFont().deriveFont(40.0f));
         resultField.setHorizontalAlignment(JTextField.RIGHT);
         return resultField;
     }
 
-    private static JPanel createMemoryPanel() {
+    private JPanel createMemoryPanel() {
         JPanel panel = createPanel(new GridLayout(5, 1, 10, 10));
 
         JTextField memoryField = new JTextField();
@@ -80,7 +84,7 @@ public class Calculatrice {
         return panel;
     }
 
-    private static JPanel createMainPanel() {
+    private JPanel createMainPanel() {
         JPanel mainPanel = new JPanel(); // Le BoxLayout est spécial et doit être créé après le panel.
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
@@ -92,7 +96,7 @@ public class Calculatrice {
         return mainPanel;
     }
 
-    private static JPanel createEditPanel() {
+    private JPanel createEditPanel() {
         JPanel panel = createPanel(new GridLayout(1, 3, 10, 10));
         panel.add(createButton("Backspace", Color.RED));
         panel.add(createButton("CE", Color.RED));
@@ -100,7 +104,7 @@ public class Calculatrice {
         return panel;
     }
 
-    private static JPanel createNumberPanel() {
+    private JPanel createNumberPanel() {
         String[] labels = {
                 "7", "8", "9", "/", "sqrt",
                 "4", "5", "6", "*", "%",
@@ -108,7 +112,7 @@ public class Calculatrice {
                 "0", "+/-", ".", "+", "="
         };
 
-        JPanel panel = createPanel(new GridLayout(4, 5, 10, 10), Color.RED);
+        JPanel panel = createPanel(new GridLayout(4, 5, 10, 10));
         for (String label : labels)
             panel.add(createButton(label));
         return panel;
@@ -127,12 +131,10 @@ public class Calculatrice {
     }
 
     private static JButton createButton(String text) {
-        return createButton(text, Color.BLUE);
+        return new MyButton(text);
     }
 
     private static JButton createButton(String text, Color color) {
-        JButton button = new JButton(text);
-        button.setForeground(color);
-        return button;
+        return new MyButton(text, color);
     }
 }

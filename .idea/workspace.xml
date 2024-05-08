@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Ajout des boutons manquants.">
+    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Création d'une classe MyButton.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Calculatrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculatrice.java" afterDir="false" />
     </list>
@@ -60,6 +60,8 @@
     <MESSAGE value="Ajout du panneau central." />
     <MESSAGE value="Ajustements mineurs pour améliorer le placement des composants." />
     <MESSAGE value="Ajout des boutons manquants." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des boutons manquants." />
+    <MESSAGE value="Ajout d'une méthode pour créer des panneaux." />
+    <MESSAGE value="Création d'une classe MyButton." />
+    <option name="LAST_COMMIT_MESSAGE" value="Création d'une classe MyButton." />
   </component>
 </project>
