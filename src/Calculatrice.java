@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class Calculatrice extends JFrame {
     static JTextField resultField;
 
-    private double memory;
+    private double result, memory;
 
     public static void main(String[] args) {
         // Création de la fenêtre principale (la "racine graphique").
@@ -67,7 +67,7 @@ public class Calculatrice extends JFrame {
     }
 
     private JTextField createResultField() {
-        resultField = new JTextField("0.0");
+        resultField = new JTextField(String.valueOf(result));
         resultField.setFont(resultField.getFont().deriveFont(40.0f));
         resultField.setHorizontalAlignment(JTextField.RIGHT);
         return resultField;
@@ -82,25 +82,32 @@ public class Calculatrice extends JFrame {
         memoryField.setHorizontalAlignment(JTextField.CENTER);
         panel.add(memoryField);
 
-        JButton buttonClear = new JButton("MC");
-        buttonClear.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                memory = 0.0;
-                memoryField.setText("");
-            }
+        JButton clearButton = new JButton("MC");
+        clearButton.addActionListener(e -> {
+            memory = 0.0;
+            memoryField.setText("");
         });
-        panel.add(buttonClear);
+        panel.add(clearButton);
 
-        panel.add(new MyButton("MR", Color.RED));
-        panel.add(new MyButton("MS", Color.RED));
+        JButton recallButton = new JButton("MR");
+        recallButton.addActionListener(e -> {
+            resultField.setText(String.valueOf(memory));
+        });
+        panel.add(recallButton);
 
-        JButton buttonAdd = new JButton("M+");
-        buttonAdd.addActionListener(e -> {
+        JButton storeButton = new JButton("MS");
+        storeButton.addActionListener(e -> {
+            memory = Double.parseDouble(resultField.getText());
+            memoryField.setText(String.valueOf(memory));
+        });
+        panel.add(storeButton);
+
+        JButton addButton = new JButton("M+");
+        addButton.addActionListener(e -> {
             memory += Double.parseDouble(resultField.getText());
             memoryField.setText(String.valueOf(memory));
         });
-        panel.add(buttonAdd);
+        panel.add(addButton);
 
         return panel;
     }
