@@ -76,10 +76,10 @@ public class Calculatrice extends JFrame {
         memoryField.setHorizontalAlignment(JTextField.CENTER);
         panel.add(memoryField);
 
-        panel.add(createButton("MC"));
-        panel.add(createButton("MR"));
-        panel.add(createButton("MS"));
-        panel.add(createButton("M+"));
+        panel.add(new MyButton("MC", Color.RED));
+        panel.add(new MyButton("MR", Color.RED));
+        panel.add(new MyButton("MS", Color.RED));
+        panel.add(new MyButton("M+", Color.RED));
 
         return panel;
     }
@@ -90,17 +90,17 @@ public class Calculatrice extends JFrame {
 
         JPanel editPanel = createEditPanel();
         editPanel.setMaximumSize(new Dimension(1000, 0));
-
         mainPanel.add(editPanel);
+
         mainPanel.add(createNumberPanel());
         return mainPanel;
     }
 
     private JPanel createEditPanel() {
         JPanel panel = createPanel(new GridLayout(1, 3, 10, 10));
-        panel.add(createButton("Backspace", Color.RED));
-        panel.add(createButton("CE", Color.RED));
-        panel.add(createButton("C", Color.RED));
+        panel.add(new MyButton("Backspace", Color.RED));
+        panel.add(new MyButton("CE", Color.RED));
+        panel.add(new MyButton("C", Color.RED));
         return panel;
     }
 
@@ -114,7 +114,7 @@ public class Calculatrice extends JFrame {
 
         JPanel panel = createPanel(new GridLayout(4, 5, 10, 10));
         for (String label : labels)
-            panel.add(createButton(label));
+            panel.add(new MyButton(label));
         return panel;
     }
 
@@ -128,13 +128,5 @@ public class Calculatrice extends JFrame {
         JPanel panel = new JPanel(layout);
         panel.setBorder(new LineBorder(color, 10));
         return panel;
-    }
-
-    private static JButton createButton(String text) {
-        return new MyButton(text);
-    }
-
-    private static JButton createButton(String text, Color color) {
-        return new MyButton(text, color);
     }
 }
