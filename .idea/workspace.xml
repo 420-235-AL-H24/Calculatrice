@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Retrait de la méthode createButton.">
+    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Ajout de action listener (méthodes anonymes) pour les boutons qui contrôlent la mémoire.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculatrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculatrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +62,8 @@
     <MESSAGE value="Ajout d'une méthode pour créer des panneaux." />
     <MESSAGE value="Création d'une classe MyButton." />
     <MESSAGE value="Retrait de la méthode createButton." />
-    <option name="LAST_COMMIT_MESSAGE" value="Retrait de la méthode createButton." />
+    <MESSAGE value="Ajout de l'interface ActionListener à la classe MyButton." />
+    <MESSAGE value="Ajout de action listener (méthodes anonymes) pour les boutons qui contrôlent la mémoire." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de action listener (méthodes anonymes) pour les boutons qui contrôlent la mémoire." />
   </component>
 </project>

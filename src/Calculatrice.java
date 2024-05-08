@@ -2,6 +2,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Calculatrice extends JFrame {
     static JTextField resultField;
@@ -80,10 +82,25 @@ public class Calculatrice extends JFrame {
         memoryField.setHorizontalAlignment(JTextField.CENTER);
         panel.add(memoryField);
 
-        panel.add(new MyButton("MC", Color.RED));
+        JButton buttonClear = new JButton("MC");
+        buttonClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                memory = 0.0;
+                memoryField.setText("");
+            }
+        });
+        panel.add(buttonClear);
+
         panel.add(new MyButton("MR", Color.RED));
         panel.add(new MyButton("MS", Color.RED));
-        panel.add(new MyButton("M+", Color.RED));
+
+        JButton buttonAdd = new JButton("M+");
+        buttonAdd.addActionListener(e -> {
+            memory += Double.parseDouble(resultField.getText());
+            memoryField.setText(String.valueOf(memory));
+        });
+        panel.add(buttonAdd);
 
         return panel;
     }
