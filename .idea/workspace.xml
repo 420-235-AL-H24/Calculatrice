@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Ajout d'une classe NumberField pour garder les valeurs et les champs texte synchronisés.">
+      <change afterPath="$PROJECT_DIR$/src/NumberButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OperatorButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Calculatrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculatrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NumberField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NumberField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +30,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

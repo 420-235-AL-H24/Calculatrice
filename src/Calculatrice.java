@@ -145,7 +145,7 @@ public class Calculatrice extends JFrame {
 
         JPanel panel = createPanel(new GridLayout(4, 5, 10, 10));
         for (String label : labels)
-            panel.add(new MyButton(label));
+            panel.add(new NumberButton(label));
         return panel;
     }
 

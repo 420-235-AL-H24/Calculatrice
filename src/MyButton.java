@@ -5,10 +5,6 @@ import java.awt.event.ActionListener;
 
 public class MyButton extends JButton implements ActionListener {
 
-    public MyButton(String text) {
-        this(text, Color.BLUE);
-    }
-
     public MyButton(String text, Color color) {
         super(text);
         this.setForeground(color);
