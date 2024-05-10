@@ -2,13 +2,9 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Calculatrice extends JFrame {
-    static JTextField resultField;
-
-    private double result, memory;
+    static NumberField resultField, memoryField;
 
     public static void main(String[] args) {
         // Création de la fenêtre principale (la "racine graphique").
@@ -29,8 +25,8 @@ public class Calculatrice extends JFrame {
 
         this.setJMenuBar(createMenuBar()); // Ajout de la barre de menu (directement sous la barre de titre).
         this.add(createResultField(), BorderLayout.NORTH); // Ajout de la barre des résultats, en haut.
-        this.add(createMemoryPanel(), BorderLayout.WEST); // Ajout du panneau de mémoire, à gauche.
-        this.add(createMainPanel(), BorderLayout.CENTER); // Ajout du panneau principal, au centre.
+        this.add(createMemoryPanel(), BorderLayout.WEST);  // Ajout du panneau de mémoire, à gauche.
+        this.add(createMainPanel(), BorderLayout.CENTER);  // Ajout du panneau principal, au centre.
     }
 
     private JMenuBar createMenuBar() {
@@ -67,7 +63,7 @@ public class Calculatrice extends JFrame {
     }
 
     private JTextField createResultField() {
-        resultField = new JTextField(String.valueOf(result));
+        resultField = new NumberField();
         resultField.setFont(resultField.getFont().deriveFont(40.0f));
         resultField.setHorizontalAlignment(JTextField.RIGHT);
         return resultField;
@@ -76,36 +72,29 @@ public class Calculatrice extends JFrame {
     private JPanel createMemoryPanel() {
         JPanel panel = createPanel(new GridLayout(5, 1, 10, 10));
 
-        JTextField memoryField = new JTextField();
+        memoryField = new NumberField();
         memoryField.setEditable(false);
-        memoryField.setFont(memoryField.getFont().deriveFont(20.0f));
+        memoryField.setFont(memoryField.getFont().deriveFont(15.0f));
         memoryField.setHorizontalAlignment(JTextField.CENTER);
         panel.add(memoryField);
 
         JButton clearButton = new JButton("MC");
-        clearButton.addActionListener(e -> {
-            memory = 0.0;
-            memoryField.setText("");
-        });
+        clearButton.addActionListener(e -> memoryField.setValue(0.0));
         panel.add(clearButton);
 
         JButton recallButton = new JButton("MR");
-        recallButton.addActionListener(e -> {
-            resultField.setText(String.valueOf(memory));
-        });
+        recallButton.addActionListener(e -> resultField.setValue(memoryField.getValue()));
         panel.add(recallButton);
 
         JButton storeButton = new JButton("MS");
         storeButton.addActionListener(e -> {
-            memory = Double.parseDouble(resultField.getText());
-            memoryField.setText(String.valueOf(memory));
+            memoryField.setValue(Double.parseDouble(resultField.getText()));
         });
         panel.add(storeButton);
 
         JButton addButton = new JButton("M+");
         addButton.addActionListener(e -> {
-            memory += Double.parseDouble(resultField.getText());
-            memoryField.setText(String.valueOf(memory));
+            memoryField.addValue(Double.parseDouble(resultField.getText()));
         });
         panel.add(addButton);
 
