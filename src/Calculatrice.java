@@ -63,7 +63,7 @@ public class Calculatrice extends JFrame {
     }
 
     private JTextField createResultField() {
-        resultField = new NumberField();
+        resultField = new NumberField(0.0);
         resultField.setFont(resultField.getFont().deriveFont(40.0f));
         resultField.setHorizontalAlignment(JTextField.RIGHT);
         return resultField;
@@ -79,7 +79,7 @@ public class Calculatrice extends JFrame {
         panel.add(memoryField);
 
         JButton clearButton = new JButton("MC");
-        clearButton.addActionListener(e -> memoryField.setValue(0.0));
+        clearButton.addActionListener(e -> memoryField.clear());
         panel.add(clearButton);
 
         JButton recallButton = new JButton("MR");
@@ -94,7 +94,7 @@ public class Calculatrice extends JFrame {
 
         JButton addButton = new JButton("M+");
         addButton.addActionListener(e -> {
-            memoryField.addValue(Double.parseDouble(resultField.getText()));
+            memoryField.setValue(memoryField.getValue() + Double.parseDouble(resultField.getText()));
         });
         panel.add(addButton);
 
@@ -115,9 +115,23 @@ public class Calculatrice extends JFrame {
 
     private JPanel createEditPanel() {
         JPanel panel = createPanel(new GridLayout(1, 3, 10, 10));
-        panel.add(new MyButton("Backspace", Color.RED));
-        panel.add(new MyButton("CE", Color.RED));
-        panel.add(new MyButton("C", Color.RED));
+
+        JButton backButton = new MyButton("Backspace", Color.RED);
+        backButton.addActionListener(e -> {
+            String text = resultField.getText();
+            text = text.substring(0, text.length() - 1);
+            resultField.setText(text);
+        });
+        panel.add(backButton);
+
+        JButton ceButton = new MyButton("CE", Color.RED);
+        ceButton.addActionListener(e -> resultField.setValue(0));
+        panel.add(ceButton);
+
+        JButton cButton = new MyButton("C", Color.RED);
+        cButton.addActionListener(e -> resultField.setValue(0));
+        panel.add(cButton);
+
         return panel;
     }
 

@@ -5,7 +5,12 @@ public class NumberField extends JTextField {
 
     public NumberField() {
         super();
-        this.setValue(0.0);
+        this.clear();
+    }
+
+    public NumberField(double value) {
+        super();
+        this.setValue(value);
     }
 
     public double getValue() {
@@ -17,7 +22,8 @@ public class NumberField extends JTextField {
         this.setText(String.valueOf(value));
     }
 
-    public void addValue(double value) {
-        this.setValue(this.value + value);
+    public void clear() {
+        this.value = 0.0;
+        this.setText("");
     }
 }

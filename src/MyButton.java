@@ -22,4 +22,9 @@ public class MyButton extends JButton implements ActionListener {
         else
             Calculatrice.resultField.setText(this.getText());
     }
+
+    @Override
+    public String toString() {
+        return "B{" + getText() + "}";
+    }
 }
