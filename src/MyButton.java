@@ -5,7 +5,14 @@ import java.awt.event.ActionListener;
 
 public class MyButton extends JButton implements ActionListener {
 
-    public MyButton(String text, Color color) {
+    public static MyButton createButton(String text) {
+        if (text.length() == 1 && Character.isDigit(text.charAt(0)))
+            return new NumberButton(text);
+        else
+            return new OperatorButton(text);
+    }
+
+    protected MyButton(String text, Color color) {
         super(text);
         this.setForeground(color);
         this.addActionListener(this);
@@ -13,10 +20,7 @@ public class MyButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (Character.isDigit(this.getText().charAt(0)))
-            Calculatrice.resultField.setText(Calculatrice.resultField.getText() + this.getText());
-        else
-            Calculatrice.resultField.setText(this.getText());
+        Calculatrice.resultField.setText(this.getText());
     }
 
     @Override

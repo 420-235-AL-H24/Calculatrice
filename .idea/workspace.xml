@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Ajout d'une classe NumberField pour garder les valeurs et les champs texte synchronisés.">
-      <change afterPath="$PROJECT_DIR$/src/NumberButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OperatorButton.java" afterDir="false" />
+    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Ajout de sous-classes de MyButton pour les numéros et les opérateurs.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Calculatrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculatrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NumberButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NumberButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OperatorButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OperatorButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +81,7 @@
     <MESSAGE value="Ajout de l'interface ActionListener à la classe MyButton." />
     <MESSAGE value="Ajout de action listener (méthodes anonymes) pour les boutons qui contrôlent la mémoire." />
     <MESSAGE value="Ajout d'une classe NumberField pour garder les valeurs et les champs texte synchronisés." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'une classe NumberField pour garder les valeurs et les champs texte synchronisés." />
+    <MESSAGE value="Ajout de sous-classes de MyButton pour les numéros et les opérateurs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de sous-classes de MyButton pour les numéros et les opérateurs." />
   </component>
 </project>

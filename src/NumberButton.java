@@ -2,12 +2,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class NumberButton extends MyButton {
-    public NumberButton(String text) {
+    final int value;
+    protected NumberButton(String text) {
         super(text, Color.BLUE);
+        this.value = Integer.parseInt(text);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Calculatrice.resultField.setText(Calculatrice.resultField.getText() + this.getText());
+        Calculatrice.resultField.setValue(10 * Calculatrice.resultField.getValue() + this.value);
     }
 }

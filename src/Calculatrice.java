@@ -7,8 +7,7 @@ public class Calculatrice extends JFrame {
     static NumberField resultField, memoryField;
 
     public static void main(String[] args) {
-        // Création de la fenêtre principale (la "racine graphique").
-        JFrame frame = new Calculatrice();
+        JFrame frame = new Calculatrice(); // Création de la fenêtre principale (la "racine graphique").
 
         if (args.length == 2) {
             // Place la fenêtre à un endroit spécifique de l'écran (utile pour les démonstrations en classe).
@@ -145,7 +144,7 @@ public class Calculatrice extends JFrame {
 
         JPanel panel = createPanel(new GridLayout(4, 5, 10, 10));
         for (String label : labels)
-            panel.add(new NumberButton(label));
+            panel.add(MyButton.createButton(label));
         return panel;
     }
 
