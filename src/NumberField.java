@@ -13,17 +13,23 @@ public class NumberField extends JTextField {
         this.setValue(value);
     }
 
+    @Override
+    public void setText(String text) {
+        super.setText(text);
+        this.value = Double.parseDouble(text);
+    }
+
     public double getValue() {
         return value;
     }
 
     public void setValue(double value) {
         this.value = value;
-        this.setText(String.valueOf(value));
+        super.setText(String.valueOf(value));
     }
 
     public void clear() {
         this.value = 0.0;
-        this.setText("");
+        super.setText("");
     }
 }

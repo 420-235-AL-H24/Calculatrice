@@ -62,7 +62,7 @@ public class Calculatrice extends JFrame {
     }
 
     private JTextField createResultField() {
-        resultField = new NumberField(0.0);
+        resultField = new NumberField();
         resultField.setFont(resultField.getFont().deriveFont(40.0f));
         resultField.setHorizontalAlignment(JTextField.RIGHT);
         return resultField;
@@ -86,15 +86,11 @@ public class Calculatrice extends JFrame {
         panel.add(recallButton);
 
         JButton storeButton = new JButton("MS");
-        storeButton.addActionListener(e -> {
-            memoryField.setValue(Double.parseDouble(resultField.getText()));
-        });
+        storeButton.addActionListener(e -> memoryField.setValue(resultField.getValue()));
         panel.add(storeButton);
 
         JButton addButton = new JButton("M+");
-        addButton.addActionListener(e -> {
-            memoryField.setValue(memoryField.getValue() + Double.parseDouble(resultField.getText()));
-        });
+        addButton.addActionListener(e -> memoryField.setValue(memoryField.getValue() + resultField.getValue()));
         panel.add(addButton);
 
         return panel;
@@ -123,13 +119,13 @@ public class Calculatrice extends JFrame {
         });
         panel.add(backButton);
 
-        JButton ceButton = new MyButton("CE", Color.RED);
-        ceButton.addActionListener(e -> resultField.setValue(0));
-        panel.add(ceButton);
+        JButton zeroButton = new MyButton("CE", Color.RED);
+        zeroButton.addActionListener(e -> resultField.setValue(0));
+        panel.add(zeroButton);
 
-        JButton cButton = new MyButton("C", Color.RED);
-        cButton.addActionListener(e -> resultField.setValue(0));
-        panel.add(cButton);
+        JButton clearButton = new MyButton("C", Color.RED);
+        clearButton.addActionListener(e -> resultField.clear());
+        panel.add(clearButton);
 
         return panel;
     }
