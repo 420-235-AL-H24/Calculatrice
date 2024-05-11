@@ -20,7 +20,7 @@ public class MyButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Calculatrice.resultField.setText(this.getText());
+        //Calculatrice.resultField.setText(this.getText());
     }
 
     @Override

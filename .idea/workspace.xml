@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Utilisation d'une méthode &quot;usine&quot; pour créer les boutons.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculatrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculatrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NumberButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NumberButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NumberField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NumberField.java" afterDir="false" />
+    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Implementation (partielle) des opérations.">
+      <change beforePath="$PROJECT_DIR$/src/MyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OperatorButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OperatorButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +80,7 @@
     <MESSAGE value="Ajout d'une classe NumberField pour garder les valeurs et les champs texte synchronisés." />
     <MESSAGE value="Ajout de sous-classes de MyButton pour les numéros et les opérateurs." />
     <MESSAGE value="Utilisation d'une méthode &quot;usine&quot; pour créer les boutons." />
-    <option name="LAST_COMMIT_MESSAGE" value="Utilisation d'une méthode &quot;usine&quot; pour créer les boutons." />
+    <MESSAGE value="Implementation (partielle) des opérations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation (partielle) des opérations." />
   </component>
 </project>
