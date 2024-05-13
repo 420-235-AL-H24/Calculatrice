@@ -1,5 +1,6 @@
 import javax.swing.*;
 
+// Cette classe représente un champ texte spécialisé pour contenir une valeur numérique.
 public class NumberField extends JTextField {
     private double value;
 
@@ -13,10 +14,17 @@ public class NumberField extends JTextField {
         this.setValue(value);
     }
 
+    // Lorsque la méthode setText (de la classe JTextField) est appelée, la valeur est recalculée automatiquement.
     @Override
     public void setText(String text) {
-        super.setText(text);
-        this.value = Double.parseDouble(text);
+        try {
+            this.value = Double.parseDouble(text);
+            super.setText(text);
+        }
+        catch (NumberFormatException e) {
+            e.printStackTrace();
+            super.setText(String.valueOf(value)); // On reprend la valeur précédente.
+        }
     }
 
     public double getValue() {
