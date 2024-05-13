@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.util.*;
 
 public class Calculatrice extends JFrame {
     static NumberField resultField, memoryField;
@@ -138,9 +139,27 @@ public class Calculatrice extends JFrame {
                 "0", "+/-", ".", "+", "="
         };
 
+        // Démo 1: Utilisation des méthodes de tri de la classe Collections.
+        System.out.println(Arrays.toString(labels)); // Affichage de l'array labels.
+        java.util.List<String> liste = new ArrayList<>(Arrays.asList(labels)); // Transformer labels en List<String>.
+        Collections.sort(liste); // Trier le contenu de la liste en ordre alphabétique (en utilisant compareTo()).
+        System.out.println(liste); // Affichage de la liste triée.
+
+        // Démo 2: Utilisation d'une hashmap pour associer des strings à des objets boutons.
+        Map<String, JButton> buttonMap = new HashMap<>(); // Création d'une hashmap vide.
+
         JPanel panel = createPanel(new GridLayout(4, 5, 10, 10));
-        for (String label : labels)
-            panel.add(MyButton.createButton(label));
+        for (String label : labels) {
+            MyButton button = MyButton.createButton(label);
+            buttonMap.put(label, button); // Ajout des paires clé:valeur (label:button) dans la hashmap.
+            panel.add(button);
+        }
+
+        System.out.println(buttonMap); // Affichage de la hashmap.
+
+        JButton equalButton = buttonMap.get("+"); // Obtenir le bouton associé à la string "+".
+        System.out.println(equalButton); // Affichage de l'objet MyButton obtenu.
+
         return panel;
     }
 

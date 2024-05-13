@@ -32,6 +32,6 @@ public class MyButton extends JButton implements ActionListener {
     // La méthode toString aide au débogage seulement; elle n'affecte pas l'apparence du bouton.
     @Override
     public String toString() {
-        return "B{" + getText() + "}";
+        return "B(" + getText() + ")";
     }
 }
