@@ -6,6 +6,7 @@ import java.util.*;
 
 public class Calculatrice extends JFrame {
     static NumberField resultField, memoryField;
+    static Map<String, MyButton> buttonMap;
 
     public static void main(String[] args) {
         JFrame frame = new Calculatrice(); // Création de la fenêtre principale (la "racine graphique").
@@ -66,6 +67,7 @@ public class Calculatrice extends JFrame {
         resultField = new NumberField();
         resultField.setFont(resultField.getFont().deriveFont(40.0f));
         resultField.setHorizontalAlignment(JTextField.RIGHT);
+        resultField.addKeyListener(resultField); // Ajout du champ resultField comme gestionnaire des événements du clavier.
         return resultField;
     }
 
@@ -73,7 +75,7 @@ public class Calculatrice extends JFrame {
         JPanel panel = createPanel(new GridLayout(5, 1, 10, 10));
 
         memoryField = new NumberField();
-        memoryField.setEditable(false);
+        memoryField.setEnabled(false);
         memoryField.setFont(memoryField.getFont().deriveFont(15.0f));
         memoryField.setHorizontalAlignment(JTextField.CENTER);
         panel.add(memoryField);
@@ -152,7 +154,7 @@ public class Calculatrice extends JFrame {
         System.out.println(liste); // Affichage de la liste triée.
 
         // Démo 2: Utilisation d'une hashmap pour associer des strings à des objets boutons.
-        Map<String, JButton> buttonMap = new HashMap<>(); // Création d'une hashmap vide.
+        buttonMap = new HashMap<>(); // Création d'une hashmap vide.
 
         JPanel panel = createPanel(new GridLayout(4, 5, 10, 10));
         for (String label : labels) {

@@ -1,12 +1,15 @@
 import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 // Cette classe représente un champ texte spécialisé pour contenir une valeur numérique.
-public class NumberField extends JTextField {
+public class NumberField extends JTextField implements KeyListener {
     private double value;
 
     public NumberField() {
         super();
         clear();
+        setEditable(false);
     }
 
     public void addText(String text) {
@@ -41,5 +44,26 @@ public class NumberField extends JTextField {
     public void clear() {
         this.value = 0.0;
         super.setText("0");
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        MyButton bouton = (e.getKeyChar() == '\n'
+                ? Calculatrice.buttonMap.get("=")
+                : Calculatrice.buttonMap.get(String.valueOf(e.getKeyChar())));
+        if (bouton != null)
+            bouton.actionPerformed(null);
+        else
+            System.out.println("press: " + e.getKeyChar());
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        // Intentionnellement laissé vide
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        // Intentionnellement laissé vide
     }
 }
