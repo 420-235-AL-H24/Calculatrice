@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Ajout d'exemples d'utilisation de Collections.sort et d'une hashmap.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Changements cosmétiques.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Calculatrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculatrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NumberButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NumberButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NumberField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NumberField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +105,7 @@
     <MESSAGE value="Utilisation d'une méthode &quot;usine&quot; pour créer les boutons." />
     <MESSAGE value="Implementation (partielle) des opérations." />
     <MESSAGE value="Ajout d'exemples d'utilisation de Collections.sort et d'une hashmap." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'exemples d'utilisation de Collections.sort et d'une hashmap." />
+    <MESSAGE value="Changements cosmétiques." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changements cosmétiques." />
   </component>
 </project>

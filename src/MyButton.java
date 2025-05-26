@@ -29,7 +29,7 @@ public class MyButton extends JButton implements ActionListener {
     // faire lors d'un clic. Les sous-classes vont réimplémenter cette méthode.
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("click: " + this.getText()); // Sera appelé seulement si la méthode n'est pas remplacée.
+        System.out.println("click: " + this); // Sera appelé seulement si la méthode n'est pas redéfinie.
         //Calculatrice.resultField.setText(this.getText());
     }
 

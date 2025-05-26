@@ -6,16 +6,14 @@ public class NumberField extends JTextField {
 
     public NumberField() {
         super();
-        this.clear();
-    }
-
-    public NumberField(double value) {
-        super();
-        this.setValue(value);
+        clear();
     }
 
     public void addText(String text) {
-        this.setText(this.getText() + text);
+        if (value != 0.0)
+            this.setText(this.getText() + text);
+        else
+            this.setText(text);
     }
 
     // Lorsque la méthode setText (de la classe JTextField) est appelée, la valeur est recalculée automatiquement.
@@ -42,6 +40,6 @@ public class NumberField extends JTextField {
 
     public void clear() {
         this.value = 0.0;
-        super.setText("");
+        super.setText("0");
     }
 }
