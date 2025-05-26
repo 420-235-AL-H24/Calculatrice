@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Implementation (partielle) des opérations.">
+    <list default="true" id="5051ec26-b258-488f-aa49-c9b014b2f453" name="Changes" comment="Ajout d'exemples d'utilisation de Collections.sort et d'une hashmap.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Calculatrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculatrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NumberButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NumberButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NumberField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NumberField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,22 +33,44 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "doorjuice"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/420-235-AL-H24/Calculatrice.git",
+    "accountId": "db94e8e6-c8fb-4457-a299-26f6b8f324c4"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="2fs2cDaDf0gjdVmi5dj3p1AjvUU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Main">
     <list>
       <item itemvalue="Application.Main" />
@@ -83,6 +107,7 @@
     <MESSAGE value="Ajout de sous-classes de MyButton pour les numéros et les opérateurs." />
     <MESSAGE value="Utilisation d'une méthode &quot;usine&quot; pour créer les boutons." />
     <MESSAGE value="Implementation (partielle) des opérations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation (partielle) des opérations." />
+    <MESSAGE value="Ajout d'exemples d'utilisation de Collections.sort et d'une hashmap." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'exemples d'utilisation de Collections.sort et d'une hashmap." />
   </component>
 </project>

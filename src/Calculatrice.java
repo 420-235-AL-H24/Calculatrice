@@ -21,7 +21,7 @@ public class Calculatrice extends JFrame {
 
     public Calculatrice() {
         super("Calculatrice");
-        this.setSize(500, 400); // Impose la taille initiale de la fenêtre (elle peut quand même être redimensionnée).
+        this.setSize(450, 400); // Impose la taille initiale de la fenêtre (elle peut quand même être redimensionnée).
 
         this.setJMenuBar(createMenuBar()); // Ajout de la barre de menu (directement sous la barre de titre).
         this.add(createResultField(), BorderLayout.NORTH); // Ajout de la barre des résultats, en haut.
@@ -78,6 +78,9 @@ public class Calculatrice extends JFrame {
         memoryField.setHorizontalAlignment(JTextField.CENTER);
         panel.add(memoryField);
 
+        // Il serait préférable de créer une sous-classe de MyButton pour les boutons suivants afin de garantir
+        // une apparence uniforme (mais je les laisse tels quel pour montrer la différence).
+
         JButton clearButton = new JButton("MC");
         clearButton.addActionListener(e -> memoryField.clear());
         panel.add(clearButton);
@@ -111,6 +114,7 @@ public class Calculatrice extends JFrame {
 
     private JPanel createEditPanel() {
         JPanel panel = createPanel(new GridLayout(1, 3, 10, 10));
+        panel.setBorder(new EmptyBorder(20, 10, 8, 10));
 
         JButton backButton = new MyButton("Backspace", Color.RED);
         backButton.addActionListener(e -> {
@@ -138,11 +142,13 @@ public class Calculatrice extends JFrame {
                 "1", "2", "3", "-", "1/x",
                 "0", "+/-", ".", "+", "="
         };
+        System.out.print("Démo 1 (array) : ");
+        System.out.println(Arrays.toString(labels)); // Affichage de l'array labels.
 
         // Démo 1: Utilisation des méthodes de tri de la classe Collections.
-        System.out.println(Arrays.toString(labels)); // Affichage de l'array labels.
         java.util.List<String> liste = new ArrayList<>(Arrays.asList(labels)); // Transformer labels en List<String>.
         Collections.sort(liste); // Trier le contenu de la liste en ordre alphabétique (en utilisant compareTo()).
+        System.out.print("Démo 2 (liste) : ");
         System.out.println(liste); // Affichage de la liste triée.
 
         // Démo 2: Utilisation d'une hashmap pour associer des strings à des objets boutons.
@@ -155,8 +161,10 @@ public class Calculatrice extends JFrame {
             panel.add(button);
         }
 
+        System.out.print("Démo 3 (hashmap) : ");
         System.out.println(buttonMap); // Affichage de la hashmap.
 
+        System.out.print("Démo 4 (objet bouton) : ");
         JButton equalButton = buttonMap.get("+"); // Obtenir le bouton associé à la string "+".
         System.out.println(equalButton); // Affichage de l'objet MyButton obtenu.
 

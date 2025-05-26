@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 // La classe MyButton hérite de JButton (pour en reprendre le fonctionnement de base) et implémente
 // l'interface ActionListener (pour pouvoir gérer les événements de clic).
 public class MyButton extends JButton implements ActionListener {
+    protected static Font myFont = new Font("Tahoma", Font.PLAIN, 15);
 
     // Cette méthode permet de créer le bon sous-type de bouton automatiquement basé sur son texte.
     public static MyButton createButton(String text) {
@@ -18,7 +19,9 @@ public class MyButton extends JButton implements ActionListener {
     // Le constructeur est "caché" pour encourager l'utilisation de la méthode ci-dessus.
     protected MyButton(String text, Color color) {
         super(text);
+        this.setFont(myFont);
         this.setForeground(color);
+        this.setBackground(new Color(252, 252, 252));
         this.addActionListener(this); // Le bouton écoute/réagit à ses propres événements.
     }
 
@@ -26,6 +29,7 @@ public class MyButton extends JButton implements ActionListener {
     // faire lors d'un clic. Les sous-classes vont réimplémenter cette méthode.
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("click: " + this.getText()); // Sera appelé seulement si la méthode n'est pas remplacée.
         //Calculatrice.resultField.setText(this.getText());
     }
 

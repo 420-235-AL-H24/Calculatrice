@@ -14,6 +14,10 @@ public class NumberField extends JTextField {
         this.setValue(value);
     }
 
+    public void addText(String text) {
+        this.setText(this.getText() + text);
+    }
+
     // Lorsque la méthode setText (de la classe JTextField) est appelée, la valeur est recalculée automatiquement.
     @Override
     public void setText(String text) {
